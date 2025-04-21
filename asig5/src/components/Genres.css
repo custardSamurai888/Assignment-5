@@ -1,0 +1,27 @@
+.genres {
+  width: 220px;
+  background-color: #f1f1f1;
+  padding: 15px;
+}
+
+.genres h3 {
+  margin-top: 0;
+}
+
+.genres ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.genres li {
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.genres {
+  width: 220px;
+  background-color: #f1f1f1;
+  padding: 15px;
+  border-right: 1px solid #ccc;
+  box-sizing: border-box;
+}

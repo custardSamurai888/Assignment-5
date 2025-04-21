@@ -1,0 +1,30 @@
+/* RegisterView.css */
+
+.register-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.register-view h2 {
+  margin-bottom: 20px;
+}
+
+.register-view form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.register-view input {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.register-view button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}

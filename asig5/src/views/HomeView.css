@@ -1,0 +1,59 @@
+/* HomeView.css */
+
+.home-view {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.hero {
+  background-color: #1c1c1c;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.feature {
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+}
+
+.footer {
+  margin-top: auto;
+  background-color: #222;
+  color: #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+.main-layout {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.content-area {
+  flex: 1;
+  padding: 20px;
+}
+
+.sidebar {
+  width: 200px;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.movie-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.movie-card {
+  width: 200px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
