@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Genres.css';
 import axios from 'axios';
-import { Link } from 'react-router-dom'; // 👈 make sure you import this
+import { Link } from 'react-router-dom'; 
 
 const Genres = () => {
   const [genres, setGenres] = useState([]);

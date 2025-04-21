@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Genres from '../components/Genres'; // <-- include sidebar!
-import './HomeView.css'; // reuse layout styling
-
+import Genres from '../components/Genres';
+import './HomeView.css';
 import axios from 'axios';
 
 const GenreView = () => {
@@ -38,13 +37,13 @@ const GenreView = () => {
           <h2>Movies in this Genre</h2>
           <div className="movie-cards">
             {movies.map((movie) => (
-              <div key={movie.id} className="movie-card">
+              <Link to={`/movie/${movie.id}`} key={movie.id} className="movie-card">
                 <img
                   src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
                   alt={movie.title}
                 />
                 <p><strong>{movie.title}</strong></p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

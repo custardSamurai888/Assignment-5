@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import './Feature.css';
 
 const Feature = () => {
@@ -14,7 +15,7 @@ const Feature = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log('API response:', data); // Check the browser console for helpful info
+        console.log('API response:', data);
         setMovies(data.results.slice(0, 3));
       })
       .catch(err => console.error('Error fetching movies:', err));
@@ -25,7 +26,7 @@ const Feature = () => {
       <h2>Featured Now Playing</h2>
       <div className="feature-movies">
         {movies.map(movie => (
-          <div key={movie.id} className="movie-card">
+          <Link to={`/movie/${movie.id}`} key={movie.id} className="movie-card">
             {movie.poster_path && (
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
@@ -33,7 +34,7 @@ const Feature = () => {
               />
             )}
             <p>{movie.title}</p>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

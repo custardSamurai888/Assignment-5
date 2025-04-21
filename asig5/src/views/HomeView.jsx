@@ -11,7 +11,9 @@ const HomeView = () => {
     <div className="home-view">
       <Header />
       <div className="main-layout">
-        <Genres />
+        <div className="sidebar">
+          <Genres />
+        </div>
         <div className="content-area">
           <Hero />
           <Feature />

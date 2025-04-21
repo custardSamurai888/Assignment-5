@@ -1,0 +1,40 @@
+.movie-detail-view {
+  padding: 20px;
+}
+
+.movie-detail-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.movie-detail-poster {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.movie-detail-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.movie-detail-info h2 {
+  margin-bottom: 10px;
+}
+
+.movie-detail-info .overview {
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+.loading,
+.error-message {
+  text-align: center;
+  font-size: 18px;
+  padding: 40px;
+}
