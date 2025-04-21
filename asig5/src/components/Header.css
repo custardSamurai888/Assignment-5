@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 25px;
-  background-color: rgba(31, 31, 31, 0.8);
+  background-color: rgba(0, 0, 0, 0.829);
   color: white;
 }
 
@@ -30,4 +30,9 @@
 
 .header .auth-buttons button:hover {
   background-color: #e6b800;
+}
+
+.logo{
+  width: 100px;
+  border-radius: 10px;
 }
