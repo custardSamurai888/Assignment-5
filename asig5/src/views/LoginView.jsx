@@ -18,7 +18,7 @@ const LoginView = () => {
 
   return (
     <div className="login-view">
-      <h2>Login</h2>
+      
       <form onSubmit={handleLogin}>
         <input
           type="email"

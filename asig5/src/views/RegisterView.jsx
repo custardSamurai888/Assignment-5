@@ -24,7 +24,7 @@ const RegisterView = () => {
 
   return (
     <div className="register-view">
-      <h2>Register</h2>
+     
       <form onSubmit={handleRegister}>
         <input
           type="text"

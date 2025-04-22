@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Genres.css';
 import axios from 'axios';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
+
+const allowedGenreIds = [28, 80, 36, 878, 12, 10751, 27, 10752, 16, 14, 9648, 37];
 
 const Genres = () => {
   const [genres, setGenres] = useState([]);
@@ -15,7 +17,10 @@ const Genres = () => {
         },
       })
       .then((res) => {
-        setGenres(res.data.genres);
+        const filtered = res.data.genres.filter((genre) =>
+          allowedGenreIds.includes(genre.id)
+        );
+        setGenres(filtered);
       })
       .catch((err) => console.error('Genre API error:', err));
   }, []);
