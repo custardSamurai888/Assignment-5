@@ -6,7 +6,7 @@ import RegisterView from './views/RegisterView';
 import GenreView from './views/GenreView';
 import MovieDetailView from './views/MovieDetailView'; // ✅ Import MovieDetailView
 import ErrorView from './views/ErrorView'; // ✅ Import ErrorView
-import { AuthContext } from './context/AuthContext';
+import { AuthContext } from './context/LoginRegContext';
 
 function App() {
   const [username, setUsername] = useState('');

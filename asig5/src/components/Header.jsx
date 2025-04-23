@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
-import { AuthContext } from '../context/AuthContext'; 
+import { AuthContext } from '../context/LoginRegContext'; 
 
 const Header = () => {
   const navigate = useNavigate();

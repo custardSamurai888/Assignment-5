@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import './RegisterView.css';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '../context/LoginRegContext';
 import { useNavigate } from 'react-router-dom';
 
 const RegisterView = () => {
