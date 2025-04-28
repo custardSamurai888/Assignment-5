@@ -50,7 +50,7 @@ const MovieDetailView = () => {
       <Header />
       <div className="movie-detail-container">
         <button className="back-button" onClick={() => navigate(-1)}>
-          ← Back to Genre
+          ← Back 
         </button>
 
         <img

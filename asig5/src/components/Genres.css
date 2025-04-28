@@ -25,3 +25,19 @@
   border-right: 1px solid #ccc;
   box-sizing: border-box;
 }
+
+.genres a {
+  text-decoration: none;
+  color: #3366cc;
+  font-weight: normal;
+  transition: color 0.2s ease;
+}
+
+.genres a:hover {
+  color: #003399;
+}
+
+.genres a.active-genre {
+  font-weight: bold;
+  color: #d80d0d;
+}

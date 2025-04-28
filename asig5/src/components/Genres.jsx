@@ -1,12 +1,14 @@
+// Genres.jsx
 import React, { useEffect, useState } from 'react';
 import './Genres.css';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const allowedGenreIds = [28, 80, 36, 878, 12, 10751, 27, 10752, 16, 14, 9648, 37];
 
 const Genres = () => {
   const [genres, setGenres] = useState([]);
+  const { id: selectedGenreId } = useParams();
 
   useEffect(() => {
     axios
@@ -31,7 +33,12 @@ const Genres = () => {
       <ul>
         {genres.map((genre) => (
           <li key={genre.id}>
-            <Link to={`/genre/${genre.id}`}>{genre.name}</Link>
+            <Link
+              to={`/genre/${genre.id}`}
+              className={selectedGenreId === String(genre.id) ? 'active-genre' : ''}
+            >
+              {genre.name}
+            </Link>
           </li>
         ))}
       </ul>
