@@ -1,43 +1,46 @@
 .genres {
-  width: 220px;
-  background-color: #f1f1f1;
-  padding: 15px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-right: 1px solid #ddd;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .genres h3 {
-  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
 }
 
 .genres ul {
-  list-style: none;
-  padding-left: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .genres li {
-  padding: 8px 0;
-  cursor: pointer;
-}
-
-.genres {
-  width: 220px;
-  background-color: #f1f1f1;
-  padding: 15px;
-  border-right: 1px solid #ccc;
-  box-sizing: border-box;
+  margin-bottom: 10px;
 }
 
 .genres a {
   text-decoration: none;
-  color: #3366cc;
-  font-weight: normal;
-  transition: color 0.2s ease;
+  color: #444;
+  font-weight: 500;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .genres a:hover {
-  color: #003399;
+  background-color: #ddd;
+  color: #000;
 }
 
-.genres a.active-genre {
-  font-weight: bold;
-  color: #d80d0d;
+.genres .active-genre {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: 600;
 }
