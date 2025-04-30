@@ -11,20 +11,25 @@ const Genres = () => {
   const { id: selectedGenreId } = useParams();
 
   useEffect(() => {
-    axios
-      .get('https://api.themoviedb.org/3/genre/movie/list', {
-        params: {
-          api_key: import.meta.env.VITE_TMDB_API_KEY,
-          language: 'en-US',
-        },
-      })
-      .then((res) => {
+    const fetchGenres = async () => {
+      try {
+        const res = await axios.get('https://api.themoviedb.org/3/genre/movie/list', {
+          params: {
+            api_key: import.meta.env.VITE_TMDB_API_KEY,
+            language: 'en-US',
+          },
+        });
+
         const filtered = res.data.genres.filter((genre) =>
           allowedGenreIds.includes(genre.id)
         );
         setGenres(filtered);
-      })
-      .catch((err) => console.error('Genre API error:', err));
+      } catch (err) {
+        console.error('Genre API error:', err);
+      }
+    };
+
+    fetchGenres();
   }, []);
 
   return (

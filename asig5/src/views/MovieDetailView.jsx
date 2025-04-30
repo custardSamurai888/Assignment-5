@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom'; // ⬅ added useNavigate
+import { useParams, useNavigate } from 'react-router-dom';
 import './MovieDetailView.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -7,34 +7,38 @@ import axios from 'axios';
 
 const MovieDetailView = () => {
   const { movieId } = useParams();
-  const navigate = useNavigate(); // ⬅ added navigate hook
+  const navigate = useNavigate();
   const [movie, setMovie] = useState(null);
   const [trailerKey, setTrailerKey] = useState('');
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios
-      .get(`https://api.themoviedb.org/3/movie/${movieId}`, {
-        params: {
-          api_key: import.meta.env.VITE_TMDB_API_KEY,
-          language: 'en-US',
-          append_to_response: 'videos',
-        },
-      })
-      .then((res) => {
+    const fetchMovieDetails = async () => {
+      try {
+        const res = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}`, {
+          params: {
+            api_key: import.meta.env.VITE_TMDB_API_KEY,
+            language: 'en-US',
+            append_to_response: 'videos',
+          },
+        });
+
         setMovie(res.data);
 
         const trailer = res.data.videos.results.find(
           (video) => video.type === 'Trailer' && video.site === 'YouTube'
         );
+
         if (trailer) {
           setTrailerKey(trailer.key);
         }
-      })
-      .catch((err) => {
-        console.error(err);
+      } catch (err) {
+        console.error('Failed to load movie details:', err);
         setError('Failed to load movie details.');
-      });
+      }
+    };
+
+    fetchMovieDetails();
   }, [movieId]);
 
   if (error) {

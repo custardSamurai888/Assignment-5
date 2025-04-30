@@ -11,17 +11,22 @@ const GenreView = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    axios
-      .get('https://api.themoviedb.org/3/discover/movie', {
-        params: {
-          api_key: import.meta.env.VITE_TMDB_API_KEY,
-          with_genres: id,
-        },
-      })
-      .then((res) => {
-        setMovies(res.data.results);
-      })
-      .catch((err) => console.error(err));
+    const fetchMoviesByGenre = async () => {
+      try {
+        const response = await axios.get('https://api.themoviedb.org/3/discover/movie', {
+          params: {
+            api_key: import.meta.env.VITE_TMDB_API_KEY,
+            with_genres: id,
+          },
+        });
+
+        setMovies(response.data.results);
+      } catch (err) {
+        console.error('Failed to fetch genre movies:', err);
+      }
+    };
+
+    fetchMoviesByGenre();
   }, [id]);
 
   return (
